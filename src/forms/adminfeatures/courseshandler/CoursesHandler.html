@@ -1,0 +1,71 @@
+<html>
+  <body>
+    <fieldset class="section"> 
+      <legend>Administrér</legend> 
+      <fieldset class="section left"> 
+        <legend>Kurser</legend> 
+        <table> 
+          <thead> 
+            <tr> 
+              <th></th> 
+              <th>
+                <th> 
+                  <label class="above" for="cou.en.0.0" tabindex="0" draggable="true" ondragstart="this.startFieldDragging()">Navn</label> 
+                </th>
+                <th> 
+                  <label class="above" for="cou.sd.0.0" tabindex="0" draggable="true" ondragstart="this.startFieldDragging()">Startdato</label> 
+                </th>
+                <th> 
+                  <label class="above" for="cou.mai.0.0" tabindex="0" draggable="true" ondragstart="this.startFieldDragging()">Antal instruktører</label> 
+                </th>
+                <th> 
+                  <label class="above" for="cou.mas.0.0" tabindex="0" draggable="true" ondragstart="this.startFieldDragging()">Max antal deltagere</label> 
+                </th>
+                <th> 
+                  <label class="above" for="cou.mad.0.0" tabindex="0" draggable="true" ondragstart="this.startFieldDragging()">Antal DMT</label> 
+                </th>
+                <th> 
+                  <label class="above" for="cou.mas.0.0" tabindex="0" draggable="true" ondragstart="this.startFieldDragging()">Antal staff?</label> 
+                </th>
+                <th> 
+                  <label class="above" for="cou.eve.0.0" tabindex="0" draggable="true" ondragstart="this.startFieldDragging()">Type</label> 
+                </th>
+              </th> 
+            </tr> 
+          </thead> 
+          <tbody> 
+            <tr foreach="row in 0..{ROWS}"> 
+              <td class="indicator" from="coursesDS" row="$row" type="row-indicator"></td> 
+              <td>
+                <td> 
+                  <input type="text" name="event_name" from="coursesDS" size="15" id="cou.en.0.$row" row="$row"> 
+                </td>
+                <td> 
+                  <input name="start_date" from="coursesDS" type="date" date id="cou.sd.0.$row" row="$row"> 
+                </td>
+                <td> 
+                  <input type="text" name="max_amount_instructors" from="coursesDS" size="10" integer id="cou.mai.0.$row" row="$row"> 
+                </td>
+                <td> 
+                  <input type="text" name="max_amount_students" from="coursesDS" size="10" integer id="cou.mas.0.$row" row="$row"> 
+                </td>
+                <td> 
+                  <input type="text" name="max_amount_dmt" from="coursesDS" size="10" integer id="cou.mad.0.$row" row="$row"> 
+                </td>
+                <td> 
+                  <input type="text" name="max_amount_staff" from="coursesDS" size="10" integer id="cou.mas.0.$row" row="$row"> 
+                </td>
+                <td> 
+                  <input type="text" name="eventname" from="coursesDS" size="20" id="cou.eve.0.$row" row="$row"> 
+                </td>
+              </td> 
+            </tr>
+            <tr>
+              <button type="button" onclick="this.precreateFiveCourses()">Opret 5 kurser</button>
+            </tr> 
+          </tbody> 
+        </table> 
+      </fieldset> 
+    </fieldset>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+@media only screen and (max-width: 760px) 
+{
+   .app-page 
+   {
+      grid-template-columns: 1fr;
+  }
+
+  .form-area 
+  {
+   padding-left: 0; 
+   }
+
+   table#students,
+   #students thead,
+   #students tbody,
+   #students th,
+   #students td,
+   #students tr 
+   {
+       display: block; 
+   }
+
+   fieldset 
+   {
+      margin: 0; 
+      min-width: auto; 
+  }
+
+  input[type="button"],
+  button[name="close"]
+  {
+      padding: 0.8rem 1.2rem; 
+      font-size: 1.2rem; 
+  }
+	
+	#students thead tr,
+	#weeking thead tr
+
+   { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	#students tr { border: 1px solid #ccc; }
+	
+	#students td,
+   #weeking td
+   { 
+		border: none;
+		position: relative;
+		padding-left: 40% !important; 
+		border-bottom: 1px solid #eee; 
+	}
+   
+   .menu-left-place
+   {
+      display:none;
+   }
+	
+	#students td:before,
+   #weeking td:before
+   { 
+      top: 40%;
+		left: 6px;
+		width: 45%; 
+      font-weight: 700;
+		position: absolute;
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+   .menu-left{
+      width: 0.2rem;
+   }
+	
+
+
+
+   .left-menu.level-0
+   {
+      margin-top:2.5rem;
+   }
+   
+	#students td:nth-of-type(1):before { content: "Navn"; }
+   #students td:nth-of-type(2):before { content: "Mobil"; }
+   #students td:nth-of-type(3):before { content: "Email"; }
+   #students td:nth-of-type(4):before { content: "Pladser i bil"; }
+   #students td:nth-of-type(5):before { content: "Send SMS"; }
+   #students td:nth-of-type(6):before { content: "Send mail"; }
+   #students td:nth-of-type(7):before { content: "Tilføjet"; }
+
+   #weeking td:nth-of-type(1):before{content: "Dag";}
+   #weeking td:nth-of-type(2):before{content: "Dato";}
+   #weeking td:nth-of-type(3):before{content: "Aktivitet";}
+   #weeking td:nth-of-type(4):before{content: "Dag";}
+   #weeking td:nth-of-type(5):before{content: "Dag";}
+   #weeking td:nth-of-type(6):before{content: "Dag";}
+   #weeking td:nth-of-type(7):before{content: "Dag";}
+}

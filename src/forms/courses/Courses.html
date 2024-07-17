@@ -1,0 +1,62 @@
+<includes src="../../../css/styles.css"></includes>
+<form class="form">
+    <div class="block">
+        <fieldset class="container"> 
+           <legend>Kurser</legend>
+            <div style="margin-bottom: 1.5rem;">
+                <input id="past" style="margin-right: 0.5pc;" type="button" value="Fortid" class="right" onclick="this.displayPastCourses()">
+                <input id="upcoming" style="margin-right: 0.5pc;" type="button" value="I dag og fremtid" class="right" onclick="this.displayUpcomingCourses()">
+            </div>
+            <br>
+            <br>
+
+         
+                <table> 
+                <thead>
+                <tr> 
+                    <th> 
+                    <label class="above" for="eve-en-0-0" tabindex="0" onclick="this.sort('courses','event_name')">Navn</label> 
+                    </th>
+                    <th> 
+                    <label class="above" for="eve-das-0-0" tabindex="0" onclick="this.sort('courses','start_date')">Dato(er)</label> 
+                    </th> 
+                    <th> 
+                    <label class="above" for="eve-cou-0-0" tabindex="0" >Instruktør(er)</label> 
+                    </th> 
+                    <th> <!--- TODO - sort by paricipating students? note: onclick="this.sort('courses','max_amount_students')"-->
+                    <label class="above" for="eve-mas-0-0" tabindex="0" >Antal kursister</label> 
+                    </th> 
+                    <th> 
+                    <label class="above" for="eve-han-0-0" tabindex="0" >Handlinger</label> 
+                    </th> 
+                </tr> 
+                </thead> 
+                <tbody> 
+                    <!--TODO - Make pageable-->
+                <tr foreach="row in 0..{ROWS}" type="row-indicator" class="row-indicator" from="courses" row="$row" class="row"> 
+                    
+                    <td> 
+                        <input type="text" name="event_name" from="courses" size="8" readonly id="eve-en-0-$row" row="$row"> 
+                    </td>
+                    <td> 
+                        <div class="dates$row">
+                         </div>
+                    </td>
+                    <td> 
+                    <div class="instructors$row">
+                    </div>
+                    </td>
+                    <td> 
+                        <input style="text-align: right;" type="text" name="amount_participating_students" from="courses" size="5" integer readonly id="student-par-0-$row" row="$row"> 
+                        /
+                        <input type="text" name="max_amount_students" from="courses" size="5" integer readonly id="eve-mas-st-0-$row" row="$row"> 
+                    </td> 
+                    <td style="text-align: center;">
+                        <input type="button"  class="search" onclick="this.redirectToActions('$row')" row="$row">
+                    </td>
+                </tr> 
+                </tbody> 
+            </table> 
+        </fieldset>
+    </div>
+</form>

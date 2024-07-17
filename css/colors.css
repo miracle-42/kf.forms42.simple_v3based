@@ -1,0 +1,55 @@
+
+:root
+{
+   --color:#000000;
+   --leftmenucolor:#ffffff;
+   --lefttopmenu: #357EC7;
+   --nthchildeven:#f7f7f7;
+   --row_indicator:#ececec;
+   --background1:#d8d8d81a;
+   --leftmenuhover:#3171b0;
+   --background2: #d4d4d4da;
+   --searchbackground:#ffffff;
+   --fieldsetbackground:#ffffff;
+   --leftmenubackground: #36393e;
+}
+
+body.dark
+{
+   --color:#ffffff;
+   --nthchildeven:#666;
+   --background1:#353434;
+   --background2:#191919;
+   --row_indicator:#3c3c3c; 
+   --searchbackground:black;
+   --fieldsetbackground:#454545;
+}
+
+body.dark .search,
+body.dark .toplogo,
+body.dark span.calendar
+{
+   filter: invert(99%) sepia(6%) saturate(528%) hue-rotate(244deg) brightness(114%) contrast(100%);
+}
+.menu-left
+{
+   color:var(--leftmenucolor);
+   background-color:var(--leftmenubackground);
+} 
+/*-------------------------*/
+
+/*---*/
+
+/* globaly */ 
+.warningred
+{
+   color:rgb(183, 33, 33);
+}
+
+
+.calendarstart, .calendarend
+{
+   display:flex;
+   align-items: center;
+
+}

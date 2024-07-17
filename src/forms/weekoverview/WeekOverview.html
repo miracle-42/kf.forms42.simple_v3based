@@ -1,0 +1,19 @@
+<div class="calendarboard">
+   <div class="calendar">
+      <div class="calendarstart">
+         <label style="display: inline;">Start</label>
+         <input type="text" id="startdatesearch" name="startdate" from="search" placeholder="søg" date>
+         <span onclick="this.showDatePicker('search','startdate')" class="calendar"></span>
+      </div>
+      <div class="calendarend">
+         <label style="display: inline;">Slut</label>
+         <input type="tekst" id="enddatesearch" name="enddate" from="search" placeholder="søg" date-format="dd-mm-yyyy" date>
+         <span onclick="this.showDatePicker('search','enddate')" class="calendar"></span>
+      </div>
+   </div>
+ 
+   <input type="button" value="Søg" onclick="this.showweekoverview()">
+</div>
+
+<div name="weeks" id="weeks" class="showweeks"></div>
+

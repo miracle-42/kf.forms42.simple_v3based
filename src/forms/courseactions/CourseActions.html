@@ -1,0 +1,138 @@
+
+<!-- <div class="helpinggroup">
+    <div class="oepnsectiongroup">
+        click
+    </div>
+    <div class="sectiongroup">
+        <div><a href="#section1">instructors</a></div>
+        <div><a href="#section2">coursedays</a></div>
+        <div> <a href="#section3">students</a></div>
+    </div>
+</div> -->
+
+          
+<h2>{COURSE_NAME}</h2>
+<fieldset id="section1">
+    <table>
+        <tbody>
+            <tr id="instructors" class="row-indicator" foreach="number in 0..{INSTRUCTORS}">
+                <td>
+                    <input readonly name="instructor_or_dmt_ranked_number" from="instructorsparticipating" row="$number" size="1" style="display: inline; text-align: right; margin-right: 0px;">
+                    <div row="$number" id="$number_rankinstructor" style="display: inline; padding-left: 0px;">. instruktør</div>
+                </td>
+                <td><input readonly name="first_names" from="instructorsparticipating" row="$number"></td>
+                <td><input readonly name="last_name" from="instructorsparticipating" row="$number"></td>
+                <td><input readonly type="checkbox" name="assigned" from="instructorsparticipating" id="$number-assigned" row="$number" value="true"></td>
+                <td><input readonly row="$number"></td>
+            </tr>
+            <div id="missinginstructors"></div>
+    <tr id="dmts" foreach="number in 1..{DMTS}">
+    <td>
+    <input readonly row="$number" size="1" style="display: inline; text-align: right; margin-right: 0px;">
+    <div style="display: inline; padding-left: 0px;">Dmt</div>
+    </td>
+    <td><input readonly name="first_names" from="dmtsparticipating" row="$number"></td>
+    <td><input readonly name="last_name" from="dmtsparticipating" row="$number"></td>
+    <td><input readonly type="checkbox" name="assigned" from="dmtsparticipating" id="$number00-assigned" row="$number" value="true"></td>
+    <td><input row="$number"></td>
+    </tr>
+    <div id="missingdmts"></div>
+        </tbody>
+    </table>
+</fieldset>
+<fieldset id="section2">
+    <table class="coursedays">
+        <div id="coursedays">{COURSES_DAYS_ADDED}</div> 
+    </table>
+</fieldset>
+<fieldset id="section3">
+    <table id="students">
+        <thead>
+            <th class="left">
+            <p>Navn</p> 
+            </th>
+            <th class="left">
+                <p>Mobil</p> 
+            </th>
+            <th class="left">
+                <p>Email</p> 
+            </th class="left">
+            <th class="left">
+                <p>Pladser i bil</p> 
+            </th>
+            <th class="left">
+                <p>Send SMS</p> 
+            </th>
+            <th class="left">
+                <p>Send mail</p> 
+            </th>
+            <th class="left">
+                <p>Tilføjet</p> 
+            </th>
+        </thead>
+        <tbody foreach="index in 0..{STUDENTS}" class="row-indicator" >
+                <tr class="row-indicator">
+                    <!-- <td hidden="true"><input  name="associated_id" from="studentsparticipating" row="$index"></td> -->
+                    <td class="left">
+                        <input readonly name="first_names" from="studentsparticipating" id="$index-first_names" row="$index" style="margin-right: 0%; width: min-content;" type="text">
+                        <input readonly name="last_name" from="studentsparticipating" id="$index-last_name" row="$index" style="margin-left: 0%;">
+                    </td>
+                    <td>
+                    +<input readonly name="area_phone_code" from="studentsparticipating" id="$index-student_area_phone_code" row="$index" style="width: min-content; margin-right: 0%;width: 2ch;">
+                        <input readonly name="phone_number" from="studentsparticipating" id="$index-student_phone_number" row="$index" style="margin-left: 0%; display: inline; display: inline; width:12rem;">
+                    </td>
+                    <td><input readonly name="email" from="studentsparticipating" id="$index-student_email" row="$index" style="width:14rem;"></td>
+                    <!-- TODO - make changes for seats in car ! ^ -->
+                <td><input readonly type="checkbox"  name="seats_available" from="studentsparticipating" id="$index-seats_available" row="$index" value="true" style="width: 7rem;"></td>
+                    
+                    <td><input type="button" name="sending_sms" value="📱 Send SMS (SLETTES?)" onclick="this.sendSMS('$index')" row="$index"></td>
+                    <td><input type="button" name="sending_email" value="✉️ Send Email" onclick="this.sendEmail('$index')" row="$index"></td>
+                    
+                    <td><input readonly type="text" name="signed_date" from="studentsparticipating" id="$index-signed_up_date" row="$index" ></td>
+                </tr>
+                <tr>
+                   <td class="left">
+                        <div class="columen">
+                            <div>
+                                <label for="højde">Højde:</label> <input readonly name="height_in_cm" from="studentsparticipating" id="$index-height_in_cm" row="$index">
+                            </div>
+                            <div >
+                                <label for="Kommentar">Kommentar:</label> <input readonly name="note" from="studentsparticipating" id="$index-note" row="$index" style="width:18rem;">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <label for="Skostørrelse">Skostørrelse:</label> <input readonly name="shoe_size" from="studentsparticipating" id="$index-shoe_size" row="$index"  style=" width:8rem;">
+                    </td>
+                    <td>
+                        <label for="Vægt">Vægt:</label> <input readonly name="weight_in_kg" from="studentsparticipating" id="$index-weight_in_kg" row="$index" style="width:11rem;">
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                        <label for="Sælger">Sælger:</label> <input readonly name="sold_by" from="studentsparticipating" id="$index-sold_by" row="$index"> 
+                    </td>
+                    <td>
+                         <label for="Ordre_id">Ordre id:</label><input readonly name="webshop_ordernumber" from="studentsparticipating" id="$index-webshop_ordernumber" row="$index">
+                    </td>
+                    <td>  
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left">
+                        <label for="Forsikring">Forsikring:</label><input readonly type="checkbox" name="bought_insurance" from="studentsparticipating" id="$index-bought_insurance" row="$index" value="true">
+                    </td>
+                    <td colspan="4">
+                        <label for="Nordisk_vand">Nordisk vand:</label> <input readonly  type="checkbox" name="nordic_ocean_experienced" from="studentsparticipating" id="$index-nordic_ocean_experienced" row="$index" value="true">
+                    </td>
+                    <td>
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                    
+        </tbody>
+    </table> 
+</fieldset>
+
+

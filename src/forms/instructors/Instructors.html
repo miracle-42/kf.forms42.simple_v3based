@@ -1,0 +1,74 @@
+<form class="form">
+    <div class="block">
+        <fieldset class="section">
+           
+            <legend>
+              Instrukt&oslash;rer 
+              
+            </legend> 
+            <fieldset class="section left"> 
+              <table> 
+                <thead>
+                  <tr>
+                    <th> 
+                      </th>
+                      <th></th>
+                      <th></th>
+                      <th><label>Kontanktoplysninger</label></th>
+                      <th></th>
+                  </tr> 
+                </thead>
+                <thead>
+                  <tr>
+                   <th><label></label></th>
+                  </tr>
+                </thead>
+                <thead>
+                  <tr> 
+                
+                        <th>
+                          <label class="above" onclick="this.sort('instructors','first_names')">Fornavne</label> 
+                        </th>
+                        <th> 
+                          <label class="above" onclick="this.sort('instructors','last_name')">Efternavn</label> 
+                        </th>
+                     
+                      <th> 
+                          <label class="above" onclick="this.sort('instructors','area_phone_code')">+</label> 
+                        </th>
+                        <th>
+                          <label class="above" onclick="this.sort('instructors','phone_number')">Telefon</label> 
+                        </th>
+                      
+                      <th> 
+                        <label class="above" onclick="this.sort('instructors','email')">Email</label> 
+                      </th>
+                     
+                  </tr> 
+                </thead> 
+                <tbody> 
+                  <tr id="amount-instructors" class="row-indicator" foreach="row in 1..{ROWS}"> 
+                      <td> 
+                        <input readonly type="text" name="first_names" from="instructors" size="12" id="ass-fn-0-$row" row="$row"> 
+                      </td>
+                      <td> 
+                        <input readonly type="text" name="last_name" from="instructors" size="8" id="ass-ln-0-$row" row="$row"> 
+                      </td>
+                      <td> 
+                        <div class="right" style="padding-right: 0pc;">
+                         +<input style="width: 2pc; text-align: right;"  readonly style="display: inline;" type="number" name="area_phone_code" from="instructors" size="3" integer id="ass-cpc-0-$row" row="$row"> 
+                        </div>
+                      </td>
+                      <td> 
+                        <input readonly type="number" name="phone_number" from="instructors" size="8" id="ass-pn-0-$row" row="$row"> 
+                      </td>
+                      <td> 
+                        <input readonly type="text" name="email" from="instructors" size="20" id="ass-ema-0-$row" row="$row"> 
+                      </td>
+                  </tr> 
+                </tbody> 
+              </table> 
+            </fieldset> 
+          </fieldset>
+    </div>
+</form>
